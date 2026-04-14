@@ -1,2 +1,10 @@
 # App Financeiro em Java
-Projetos simples para controle de despesas e receitas
+Sistema simples para controle de despesas e receitas
+
+## Funcionalidades
+- Adição de receitas e despesas
+- Cálculo de saldo
+- Interação via terminal
+
+## Tecnologias
+- Java
