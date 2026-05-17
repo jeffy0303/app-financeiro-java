@@ -8,39 +8,63 @@ public class Main {
 
         double saldo = 0;
         ArrayList<Movimentacao> movimentacoes = new ArrayList<>();
-        char continuar = 's';
 
-        while (continuar == 's') {
+        boolean executando = true;
 
-        Movimentacao mov = new Movimentacao();
+        while (executando) {
 
-        System.out.println("Digite um valor: ");
-        mov.valor = sc.nextDouble();
+            System.out.println("\n=== MeuFinanceiro ===");
+            System.out.println("1 - Adicionar movimentação");
+            System.out.println("2 - Ver histórico");
+            System.out.println("3 - Ver saldo");
+            System.out.println("0 - Sair");
 
-        System.out.println("É receita ou despesa? ");
-        mov.tipo = sc.next();
+            int opcao = sc.nextInt();
 
-        movimentacoes.add(mov);
+            switch (opcao) {
 
-            if (mov.tipo.equals("receita")) {
-                saldo += mov.valor;
-            } else {
-                saldo -= mov.valor;
+                case 1:
+
+                    Movimentacao mov = new Movimentacao();
+
+                    System.out.println("Digite um valor: ");
+                    mov.valor = sc.nextDouble();
+
+                    System.out.println("É receita ou despesa? ");
+                    mov.tipo = sc.next();
+
+                    movimentacoes.add(mov);
+
+                    if (mov.tipo.equals("receita")) {
+                        saldo += mov.valor;
+                    } else {
+                        saldo -= mov.valor;
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Histórico:");
+
+                    for (Movimentacao movimentacao : movimentacoes) {
+                        System.out.println(movimentacao.tipo + " - " + movimentacao.valor);
+
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Saldo atual: " + saldo);
+                    break;
+
+                case 0:
+                    executando = false;
+                    break;
+
+                default:
+                    System.out.println("Opção inválida");
+
             }
 
-            System.out.println("Saldo atual: " + saldo);
-
-            System.out.println("Histórico:");
-
-            for (Movimentacao movimentacao : movimentacoes) {
-
-                System.out.println(mov.tipo + " - " + mov.valor);
-
-            }
-                System.out.println("Deseja continuar?");
-            continuar = sc.next().toLowerCase().charAt(0);
         }
 
         System.out.println("Programa finalizado!");
-    }
-}
+    }}
