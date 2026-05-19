@@ -49,6 +49,10 @@ public class Main {
                 case 2:
                     System.out.println("Histórico:");
 
+                    if (movimentacoes.isEmpty()) {
+                        System.out.println("Nenhuma movimentação cadastrada.");
+                    }
+
                     for (Movimentacao movimentacao : movimentacoes) {
                         System.out.println(movimentacao.tipo + " - " + movimentacao.valor);
 
