@@ -64,6 +64,7 @@ public class Main {
                     break;
 
                 case 0:
+                    System.out.println("Saindo do sistema...");
                     executando = false;
                     break;
 
