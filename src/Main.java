@@ -54,7 +54,8 @@ public class Main {
                     }
 
                     for (Movimentacao movimentacao : movimentacoes) {
-                        System.out.println(movimentacao.tipo + " - " + movimentacao.valor);
+                        System.out.println("Tipo: " + movimentacao.tipo +
+                                " | Valor: R$ " + movimentacao.valor);
 
                     }
                     break;
