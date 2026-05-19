@@ -35,10 +35,14 @@ public class Main {
 
                     movimentacoes.add(mov);
 
-                    if (mov.tipo.equals("receita")) {
+                    if (mov.tipo.equalsIgnoreCase("receita")) {
                         saldo += mov.valor;
-                    } else {
+
+                    } else if (mov.tipo.equalsIgnoreCase("despesa")) {
                         saldo -= mov.valor;
+
+                    } else {
+                        System.out.println("Tipo inválido!");
                     }
                     break;
 
