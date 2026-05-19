@@ -35,18 +35,27 @@ public class Main {
 
                     movimentacoes.add(mov);
 
-                    if (mov.tipo.equals("receita")) {
+                    if (mov.tipo.equalsIgnoreCase("receita")) {
                         saldo += mov.valor;
-                    } else {
+
+                    } else if (mov.tipo.equalsIgnoreCase("despesa")) {
                         saldo -= mov.valor;
+
+                    } else {
+                        System.out.println("Tipo inválido!");
                     }
                     break;
 
                 case 2:
                     System.out.println("Histórico:");
 
+                    if (movimentacoes.isEmpty()) {
+                        System.out.println("Nenhuma movimentação cadastrada.");
+                    }
+
                     for (Movimentacao movimentacao : movimentacoes) {
-                        System.out.println(movimentacao.tipo + " - " + movimentacao.valor);
+                        System.out.println("Tipo: " + movimentacao.tipo +
+                                " | Valor: R$ " + movimentacao.valor);
 
                     }
                     break;
@@ -56,6 +65,7 @@ public class Main {
                     break;
 
                 case 0:
+                    System.out.println("Saindo do sistema...");
                     executando = false;
                     break;
 
