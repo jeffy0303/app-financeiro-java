@@ -33,6 +33,9 @@ public class Main {
                     System.out.println("É receita ou despesa? ");
                     mov.tipo = sc.next();
 
+                    System.out.println("Digite a descrição: ");
+                    mov.descricao = sc.next();
+
                     movimentacoes.add(mov);
 
                     if (mov.tipo.equalsIgnoreCase("receita")) {
@@ -55,7 +58,8 @@ public class Main {
 
                     for (Movimentacao movimentacao : movimentacoes) {
                         System.out.println("Tipo: " + movimentacao.tipo +
-                                " | Valor: R$ " + movimentacao.valor);
+                                " | Valor: R$ " + movimentacao.valor +
+                                " | Descrição: " +movimentacao.descricao);
 
                     }
                     break;
