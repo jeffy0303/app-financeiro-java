@@ -36,6 +36,9 @@ public class Main {
                     System.out.println("Digite a descrição: ");
                     mov.descricao = sc.next();
 
+                    System.out.println("Digite a categoria: ");
+                    mov.categoria = sc.next();
+
                     movimentacoes.add(mov);
 
                     if (mov.tipo.equalsIgnoreCase("receita")) {
@@ -59,7 +62,8 @@ public class Main {
                     for (Movimentacao movimentacao : movimentacoes) {
                         System.out.println("Tipo: " + movimentacao.tipo +
                                 " | Valor: R$ " + movimentacao.valor +
-                                " | Descrição: " +movimentacao.descricao);
+                                " | Descrição: " +movimentacao.descricao +
+                                " | Categoria: " +movimentacao.categoria);
 
                     }
                     break;
